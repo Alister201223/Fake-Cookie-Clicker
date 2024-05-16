@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie Clicker Game</title>
+    <style>
+        #cookie-count {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        #cookie-button {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <button id="cookie-button" onclick="clickCookie()">Click the Cookie!</button>
+    <div id="cookie-count">0 cookies</div>
+</div>
+
+<script>
+// Initialize the cookie count
+let cookieCount = 0;
+
+// Function to display the current number of cookies
+function displayCookies() {
+    document.getElementById('cookie-count').innerText = cookieCount + ' cookies';
+}
+
+// Function to 'click' the cookie and increase the count
+function clickCookie() {
+    cookieCount++; // Increment the cookie count by 1
+    displayCookies(); // Update the display with the new count
+}
+
+// Function to add cookies automatically every second
+function autoClicker() {
+    setInterval(() => {
+        cookieCount++;
+        displayCookies();
+    }, 1000); // Add 1 cookie every 1000 milliseconds (1 second)
+}
+
+// Start the auto-clicker
+autoClicker();
+</script>
+
+</body>
+</html>
